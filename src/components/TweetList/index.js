@@ -2,15 +2,15 @@ import './tweetList.css';
 
 function TweetList(){
   return (
-    <section class="tweet-container">
-      <article class="tweet">
+    <section className="tweet-container">
+      <article className="tweet">
         <header>
-          <div class="profile">
-            <img class="profile-pic" src="https://i.imgur.com/73hZDYK.png" />
+          <div className="profile">
+            <img className="profile-pic" src="https://i.imgur.com/73hZDYK.png" />
             <h4>Newton</h4>
           </div>
           
-          <div class="handle">
+          <div className="handle">
             <h5>@SirIsaac</h5>
           </div>
         </header>
@@ -21,21 +21,21 @@ function TweetList(){
         <footer>
           <div><b>10 days ago</b></div>
           <div>
-            <button class="icon flag"><i class="fas fa-flag"></i></button>
-            <button class="icon retweet"><i class="fas fa-retweet"></i></button>
-            <button class="icon heart"><i class="fas fa-heart"></i></button>
+            <button className="icon flag"><i className="fas fa-flag"></i></button>
+            <button className="icon retweet"><i className="fas fa-retweet"></i></button>
+            <button className="icon heart"><i className="fas fa-heart"></i></button>
           </div>
         </footer>
       </article>
 
-      <article class="tweet">
+      <article className="tweet">
         <header>
-          <div class="profile">
-            <img class="profile-pic" src="https://i.imgur.com/nlhLi3I.png" />
+          <div className="profile">
+            <img className="profile-pic" src="https://i.imgur.com/nlhLi3I.png" />
             <h4>Descartes</h4>
           </div>
           
-          <div class="handle">
+          <div className="handle">
             <h5>@rd</h5>
           </div>
         </header>
@@ -46,9 +46,9 @@ function TweetList(){
         <footer>
           <div><b>10 days ago</b></div>
           <div>
-            <button class="icon flag"><i class="fas fa-flag"></i></button>
-            <button class="icon retweet"><i class="fas fa-retweet"></i></button>
-            <button class="icon heart"><i class="fas fa-heart"></i></button>
+            <button className="icon flag"><i className="fas fa-flag"></i></button>
+            <button className="icon retweet"><i className="fas fa-retweet"></i></button>
+            <button className="icon heart"><i className="fas fa-heart"></i></button>
           </div>
         </footer>
       </article>
