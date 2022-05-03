@@ -1,4 +1,4 @@
-import Navigation from './components/Navigation'
+import Navigation from './components/Navigation/index'
 import Profile from './components/Profile'
 import TweetList from './components/TweetList'
 import TweetForm from './components/TweetForm'

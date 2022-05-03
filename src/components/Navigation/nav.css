@@ -1,0 +1,47 @@
+nav {
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-color: rgb(46, 155, 223, 0.98);
+  color: #fff;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 21;
+}
+
+#logo {
+  font-family: 'Bungee', sans-serif;
+  color: #fff;
+  font-size: 2em;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo > i {
+  font-size: 1.2em;
+  margin-left: 0.6em;
+}
+
+#write-new {
+  display: flex;
+  flex-direction: column;
+}
+
+#write-new > i {
+  align-self: center;
+  color: #f00;
+  padding: 0.3em;
+
+  animation: moving 1s infinite alternate;
+}
+
+@keyframes moving {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
