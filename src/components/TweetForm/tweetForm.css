@@ -41,3 +41,10 @@ form > div button {
 .new-tweet button, .counter {
   font-size: 0.8em;
 }
+
+.counter {
+  color: #545149;
+}
+.counter-red {
+  color: #f00;
+}

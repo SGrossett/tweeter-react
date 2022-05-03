@@ -2,8 +2,16 @@ import './tweetForm.css';
 import { useState } from 'react';
 
 function TweetForm() {
-  const [count, setCount] = useState(0);
+  const tweetLimit = 140;
+  const [count, setCount] = useState(140);
+  const [tweetContext, setTweetContext] = useState('')
 
+  const handleCount = (input) => {
+    setTweetContext(input);
+    setCount(tweetLimit - input.length);
+
+
+  }
   return (
     <section className="new-tweet">
       <h2>Compose Tweet</h2>
@@ -12,12 +20,14 @@ function TweetForm() {
         <textarea 
           rows={2} 
           type="text"
+          name='body'
           className="tweet-text"
-          onChange={(e) => setCount(this.value.length)}>  
+          value={tweetContext}
+          onChange={(event) => handleCount(event.target.value)}>  
         </textarea>
         <div>
           <button type="submit">Tweet</button>
-          <span name="counter" className="counter" for="tweet-text">140</span>
+          <span name="counter" className={count < 0 ? 'counter-red' : 'counter'} for="tweet-text">{count}</span>
         </div>
       </form>
     </section>
