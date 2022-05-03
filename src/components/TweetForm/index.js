@@ -4,13 +4,17 @@ import React from 'react'
 
 function TweetForm() {
   return (
-    <section class="newtweet">
-      <form method="post" action="/tweets" class="newtweet__form">
-        <textarea class="form__textarea" name="text" placeholder="What are you humming about?"></textarea>
-        <input type="submit" value="Tweet" class="form__input" />
-        <span class="form__counter">140</span>
-      </form>
-    </section>
+    <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <span name="counter" class="counter" for="tweet-text">140</span>
+          </div>
+        </form>
+      </section>
   )
 }
 

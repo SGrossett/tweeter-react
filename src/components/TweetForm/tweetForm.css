@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  border-bottom: 5px solid;
+  margin: 0.6em 0em;
+  background: transparent;
+  background-color: #E1E8ED;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+
+form > div button {
+  background-color: #2e9bdf;
+  color: #fff;
+  border: none;
+  border-radius: 0.1em;
+}
+
+.new-tweet button {
+  padding: 0.3em 1em;
+  border-radius: 30px;
+}
+
+.new-tweet button, .counter {
+  font-size: 0.8em;
+}
