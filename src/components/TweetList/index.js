@@ -6,7 +6,6 @@ console.log('tweets:', tweets.tweets);
 function TweetList(){
   return (
     <section className="tweet-container">
-      
       {tweets.tweets.map((tweet) => (
         <article className="tweet">
           <header>
