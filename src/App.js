@@ -1,5 +1,5 @@
 import Navigation from './components/Navigation/index'
-import Profile from './components/Profile'
+import Profile from './components/Profile/index'
 import TweetList from './components/TweetList'
 import TweetForm from './components/TweetForm'
 
