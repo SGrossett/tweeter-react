@@ -6,14 +6,14 @@ import TweetList from './components/TweetList'
 import './App.css';
 function App() {
   return (
-    <div className=''>
+    <body className=''>
       <Navigation />
       <Profile />
-      <div className='main'>
+      <main className='container'>
         <TweetForm />
         <TweetList />
-      </div>
-    </div>
+      </main>
+    </body>
   );
 }
 

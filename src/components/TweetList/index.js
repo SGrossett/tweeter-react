@@ -1,11 +1,12 @@
 import './tweetList.css';
+
 function TweetList(){
   return (
     <section class="tweet-container">
       <article class="tweet">
         <header>
           <div class="profile">
-            <img class="tweet--avatar" src="https://i.imgur.com/73hZDYK.png" />
+            <img class="profile-pic" src="https://i.imgur.com/73hZDYK.png" />
             <h4>Newton</h4>
           </div>
           
@@ -30,7 +31,7 @@ function TweetList(){
       <article class="tweet">
         <header>
           <div class="profile">
-            <img class="tweet--avatar" src="https://i.imgur.com/nlhLi3I.png" />
+            <img class="profile-pic" src="https://i.imgur.com/nlhLi3I.png" />
             <h4>Descartes</h4>
           </div>
           
