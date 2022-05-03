@@ -3,13 +3,16 @@ import Profile from './components/Profile/index';
 import TweetForm from './components/TweetForm/index';
 import TweetList from './components/TweetList'
 
+import './App.css';
 function App() {
   return (
-    <div className="App">
+    <div className=''>
       <Navigation />
       <Profile />
-      <TweetForm />
-      <TweetList />
+      <div className='main'>
+        <TweetForm />
+        <TweetList />
+      </div>
     </div>
   );
 }

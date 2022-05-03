@@ -1,79 +1,99 @@
-
-.tweet {
-	display: block;
-	margin: 40px 0px;
-	padding: 10px;
-	border: 4px solid #545149;
+#tweet-container {
+  margin-top: 2em;
 }
 
-.tweet:hover {
-	-webkit-box-shadow: 8px 8px 0px 0px rgba(197, 203, 227, 1);
-	-moz-box-shadow: 8px 8px 0px 0px rgba(197, 203, 227, 1);
-	box-shadow: 8px 8px 0px 0px rgba(197, 203, 227, 1);
+article {
+  border: 3px solid #000;
+  box-shadow: 0px 6px 10px rgb(0 0 0 / 50%);
+  padding: 0 0.5em 0.5em; 
+  margin: 1em 0em;
+  word-wrap: break-word;
 }
 
-.tweet--header {
-	padding: 8px;
-	transition: all 0.25s ease-in-out;
+article > header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
 }
 
-.tweet--header:after {
-	content: "";
-	display: table;
-	clear: both;
+.profile, .handle, .profile h4{
+  display: flex;
 }
 
-.tweet--avatar {
-	float: left;
-	width: 50px;
-	height: 50px;
-	padding: 2px;
+.profile h5 {
+  color: #AAB8D2;
 }
 
-.tweet--name {
-	font-size: 24px;
-	float: left;
-	margin: 0.5em 0px 0px 0.5em;
-	font-weight: 300;
+.profile-pic {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 45%;
+  padding: 0.5em;
+  background: #fff;
+  display: flex;
+  align-self: center;
 }
 
-.tweet--handle {
-	float: right;
-	color: #c5cbe3;
-	margin-top: 8px;
-	font-size: 24px;
-	padding: 2px 10px;
+article > div p {
+  margin: 0.3em 0.5em;
+  word-wrap: break-word;
 }
 
-.tweet--body {
-	padding: 10px 20px;
-	word-wrap: break-word;
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3em 1em;
+  font-size: 0.6em;
 }
 
-.tweet--footer {
-	padding: 8px 20px;
-	font-size: 0.8em;
-	border-top: 4px solid #545149;
+hr {
+  border: 1px solid;
 }
 
-.footer--actions {
-	transition: opacity 0.2s ease-in-out;
-	opacity: 0;
-	float: right;
+.icon {
+  border: none;
+  border-radius: 50%;
+  padding: 0.2em;
 }
 
-.footer--actions {
-	opacity: 1;
+.flag {
+  color: #3eaef4;
+  background-color: #fff;
 }
 
-.footer--actions i {
-	transition: all 0.15s ease-in-out;
-	color: #4056a1;
-	opacity: 1;
-	margin-left: 8px;
+.retweet {
+  color: #44bb44;
+  background-color: #fff;
 }
 
-.footer--actions i:hover {
-	opacity: 1;
-	color: #d79922;
+.heart {
+  color: #ed5ea6;
+  background-color: #fff;
+}
+
+.flag:hover, .flag:focus {
+  animation: pulse 0.3s;
+  background-color: rgb(62, 174, 244, 0.7);
+  box-shadow: 0 0 0.5em 0.2em rgb(62, 174, 244);
+}
+
+.retweet:hover, .retweet:focus {
+  animation: pulse 0.3s;
+  background-color: rgb(68, 187, 68, 0.7);
+  box-shadow: 0 0 0.5em 0.2em rgb(68, 187, 68);
+}
+
+.heart:hover, .heart:focus {
+  animation: pulse 0.3s;
+  background-color: rgb(237, 94, 166, 0.7);
+  box-shadow: 0 0 0.5em 0.2em rgb(237, 94, 166);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+article:hover {
+  box-shadow: 13px 13px #cfdae2;
 }

@@ -1,53 +1,57 @@
 import './tweetList.css';
 function TweetList(){
   return (
-    <main class="container">
-
-      <section class="tweets">
-        <article class="tweet">
-          <header class="tweet--header">
+    <section class="tweet-container">
+      <article class="tweet">
+        <header>
+          <div class="profile">
             <img class="tweet--avatar" src="https://i.imgur.com/73hZDYK.png" />
-            <h2 class="tweet--name">Newton</h2>
-            <small class="tweet--handle">@SirIsaac</small>
-          </header>
-
-          <div class="tweet--body">
-            <p>If I have seen further it is by standing on the shoulders of giants</p>
+            <h4>Newton</h4>
           </div>
+          
+          <div class="handle">
+            <h5>@SirIsaac</h5>
+          </div>
+        </header>
+        <div>
+          <p>If I have seen further it is by standing on the shoulders of giants</p>
+          <hr />
+        </div>
+        <footer>
+          <div><b>10 days ago</b></div>
+          <div>
+            <button class="icon flag"><i class="fas fa-flag"></i></button>
+            <button class="icon retweet"><i class="fas fa-retweet"></i></button>
+            <button class="icon heart"><i class="fas fa-heart"></i></button>
+          </div>
+        </footer>
+      </article>
 
-          <footer class="tweet--footer">
-            <small class="footer--age">10 days ago<small>
-                <span class="footer--actions">
-                  <a href="#"><i class="fa fa-flag"></i></a>
-                  <a href="#"><i class="fa fa-retweet"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>'
-                </span>
-              </small></small></footer>
-        </article>
-
-        <article class="tweet">
-          <header class="tweet--header">
+      <article class="tweet">
+        <header>
+          <div class="profile">
             <img class="tweet--avatar" src="https://i.imgur.com/nlhLi3I.png" />
-            <h2 class="tweet--name">Descartes</h2>
-            <small class="tweet--handle">@rd</small>
-          </header>
-
-          <div class="tweet--body">
-            <p>Je pense , donc je suis</p>
+            <h4>Descartes</h4>
           </div>
-
-          <footer class="tweet--footer">
-            <small class="footer--age">10 days ago<small>
-                <span class="footer--actions">
-                  <a href="#"><i class="fa fa-flag"></i></a>
-                  <a href="#"><i class="fa fa-retweet"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>'
-                </span>
-              </small></small></footer>
-        </article>
-
-      </section>
-    </main>
+          
+          <div class="handle">
+            <h5>@rd</h5>
+          </div>
+        </header>
+        <div>
+          <p>Je pense , donc je suis</p>
+          <hr />
+        </div>
+        <footer>
+          <div><b>10 days ago</b></div>
+          <div>
+            <button class="icon flag"><i class="fas fa-flag"></i></button>
+            <button class="icon retweet"><i class="fas fa-retweet"></i></button>
+            <button class="icon heart"><i class="fas fa-heart"></i></button>
+          </div>
+        </footer>
+      </article>
+    </section>
   );
 }
 
