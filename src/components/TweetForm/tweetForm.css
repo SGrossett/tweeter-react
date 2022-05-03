@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Hairline&family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+
 form {
   display: flex;
   flex-direction: column;
@@ -10,6 +13,7 @@ textarea {
   margin: 0.6em 0em;
   background: transparent;
   background-color: #E1E8ED;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 form > div {
@@ -23,6 +27,7 @@ form > div button {
   color: #fff;
   border: none;
   border-radius: 0.1em;
+  font-family: 'Bungee', sans-serif;
 }
 
 .new-tweet button {
