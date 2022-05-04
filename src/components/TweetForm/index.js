@@ -9,13 +9,15 @@ function TweetForm() {
   const handleCount = (input) => {
     setTweetContext(input);
     setCount(tweetLimit - input.length);
+  }
 
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
   }
   return (
     <section className="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets/" method="POST">
+      <form action="" method="">
         <label for="tweet-text">What are you humming about?</label>
         <textarea 
           rows={2} 
@@ -26,7 +28,9 @@ function TweetForm() {
           onChange={(event) => handleCount(event.target.value)}>  
         </textarea>
         <div>
-          <button type="submit">Tweet</button>
+          <button 
+            type="submit"
+            onSubmit={() => handleSubmit()}>Tweet</button>
           <span name="counter" className={count < 0 ? 'counter-red' : 'counter'} for="tweet-text">{count}</span>
         </div>
       </form>
