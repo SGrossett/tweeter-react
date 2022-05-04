@@ -1,12 +1,24 @@
 import './tweetList.css';
-
-const tweets = require('../Tweets/Tweet.js');
-console.log('tweets:', tweets.tweets);
+import { useState, useEffect } from 'react';
+// const tweets = require('../Tweets/Tweet.js');
+// console.log('tweets:', tweets.tweets);
 
 function TweetList(){
+
+  const [tweets, setTweets] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/tweets')
+      .then(res => {
+        return res.json() })
+      .then((data) => {
+        setTweets(data) })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <section className="tweet-container">
-      {tweets.tweets.map((tweet) => (
+      {tweets && tweets.map((tweet) => (
         <article className="tweet">
           <header>
             <div className="profile">
