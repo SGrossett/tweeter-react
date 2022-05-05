@@ -3,31 +3,32 @@ import { useState } from 'react';
 import moment from 'moment';
 
 function TweetForm(props) {
+  const { avatar, name } = props;
+
   const tweetLimit = 140;
   const [count, setCount] = useState(140);
-  const [tweetContext, setTweetContext] = useState('')
-  const { avatar, name } = props;
-  const dateTimeAgo = moment().startOf('hour').fromNow();
-
+  const [tweetContext, setTweetContext] = useState('');
+  const [dateTimeAgo, setDateTimeAgo] = useState(moment().startOf('hour').fromNow());
   const [data, setData] = useState({
+    handle: '@luffy',
     avatar: avatar,
     name: name,
-    handle: '@luffy',
     body: tweetContext,
     age: dateTimeAgo   
   })
 
-  const handleCount = (input) => {
-    setTweetContext(input);
+  const handleCount = (input) => { 
+    const newData = { ...data }
+    newData.body = input;
+    newData.age = moment().startOf('hour').fromNow();
+    setData(newData);
     setCount(tweetLimit - input.length);
   }
-  console.log(data);
 
   const handleSubmit = (event) => {
-    
-    console.log('tweet context: ', tweetContext);
     event.preventDefault();
   }
+  
   return (
     <section className="new-tweet">
       <h2>Compose Tweet</h2>
@@ -38,7 +39,7 @@ function TweetForm(props) {
           type="text"
           name='body'
           className="tweet-text"
-          value={tweetContext}
+          value={data.body}
           onChange={(event) => handleCount(event.target.value)}>  
         </textarea>
         <div>
