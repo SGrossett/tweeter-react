@@ -1,16 +1,15 @@
 import './css/profile.css';
-import profilePic from './images/luffy-wave.png';
 
-function Profile() {
-  const name = 'Pirate King Luffy';
-  const avatar = profilePic;
+function Profile(props) {
+  const { name, avatar } = props;
+
   return (
     <header>
       <div className='profile-info'>
-        <div className='header-img'>
+        <div className='header-img' avatar={avatar}>
           <img src={avatar} /> 
         </div>
-        <div className='name' name='name'>
+        <div className='name' name={name}>
             <h2>{name}</h2>
         </div>
       </div>

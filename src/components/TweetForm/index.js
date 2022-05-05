@@ -1,23 +1,27 @@
 import './tweetForm.css';
 import { useState } from 'react';
+import moment from 'moment';
 
-function TweetForm() {
+function TweetForm({ avatar, name }) {
   const tweetLimit = 140;
   const [count, setCount] = useState(140);
   const [tweetContext, setTweetContext] = useState('')
 
+  const dateTimeAgo = moment().startOf('hour').fromNow();
+
   const [data, setData] = useState({
-    avatar: '',
-    name: '',
-    handle: '',
-    body: '',
-    age: ''    
+    avatar: avatar,
+    name: name,
+    handle: '@luffy',
+    body: tweetContext,
+    age: dateTimeAgo   
   })
 
   const handleCount = (input) => {
     setTweetContext(input);
     setCount(tweetLimit - input.length);
   }
+  console.log(data);
 
   const handleSubmit = (event) => {
     
