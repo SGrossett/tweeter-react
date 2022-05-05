@@ -5,14 +5,16 @@
       "name": "Isaac Newton",
       "handle": "@SirIsaac",
       "body": "If I have seen further it is by standing on the shoulders of giants",
-      "age": "10 days ago"
+      "age": "10 days ago",
+      "id": 1
     },
     {
       "avatar": "https://i.imgur.com/nlhLi3I.png",
       "name": "Descartes",
       "handle": "@rd",
       "body": "je pense, donc je suis",
-      "age": "5 days ago"
+      "age": "5 days ago",
+      "id": 0
     } 
   ]
 }

@@ -19,7 +19,7 @@ function TweetList(){
   return (
     <section className="tweet-container">
       {tweets && tweets.map((tweet) => (
-        <article className="tweet">
+        <article className="tweet" key={tweet.id}>
           <header>
             <div className="profile">
               <img className="profile-pic" src={tweet.avatar} />
