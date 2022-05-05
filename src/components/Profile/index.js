@@ -10,7 +10,7 @@ function Profile() {
         <div className='header-img'>
           <img src={avatar} /> 
         </div>
-        <div className='name'>
+        <div className='name' name='name'>
             <h2>{name}</h2>
         </div>
       </div>

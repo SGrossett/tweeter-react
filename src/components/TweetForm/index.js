@@ -6,19 +6,29 @@ function TweetForm() {
   const [count, setCount] = useState(140);
   const [tweetContext, setTweetContext] = useState('')
 
+  const [data, setData] = useState({
+    avatar: '',
+    name: '',
+    handle: '',
+    body: '',
+    age: ''    
+  })
+
   const handleCount = (input) => {
     setTweetContext(input);
     setCount(tweetLimit - input.length);
   }
 
   const handleSubmit = (event) => {
+    
+    console.log('tweet context: ', tweetContext);
     event.preventDefault();
   }
   return (
     <section className="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="" method="">
-        <label for="tweet-text">What are you humming about?</label>
+      <form>
+        <label>What are you humming about?</label>
         <textarea 
           rows={2} 
           type="text"
@@ -30,8 +40,8 @@ function TweetForm() {
         <div>
           <button 
             type="submit"
-            onSubmit={() => handleSubmit()}>Tweet</button>
-          <span name="counter" className={count < 0 ? 'counter-red' : 'counter'} for="tweet-text">{count}</span>
+            onSubmit={handleSubmit}>Tweet</button>
+          <span name="counter" className={count < 0 ? 'counter-red' : 'counter'} >{count}</span>
         </div>
       </form>
     </section>
