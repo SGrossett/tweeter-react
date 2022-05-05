@@ -2,11 +2,11 @@ import './tweetForm.css';
 import { useState } from 'react';
 import moment from 'moment';
 
-function TweetForm({ avatar, name }) {
+function TweetForm(props) {
   const tweetLimit = 140;
   const [count, setCount] = useState(140);
   const [tweetContext, setTweetContext] = useState('')
-
+  const { avatar, name } = props;
   const dateTimeAgo = moment().startOf('hour').fromNow();
 
   const [data, setData] = useState({

@@ -6,12 +6,14 @@ import profilePic from './images/luffy-wave.png';
 import './App.css';
 
 function App() {
+  const name = 'Pirate King Luffy';
+
   return (
     <body className=''>
       <Navigation />
-      <Profile name='Pirate King Luffy' avatar={profilePic}/>
+      <Profile name={name} avatar={profilePic}/>
       <main className='container'>
-        <TweetForm />
+        <TweetForm name={name} avatar={profilePic} />
         <TweetList />
       </main>
     </body>
