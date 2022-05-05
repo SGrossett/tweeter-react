@@ -2,8 +2,9 @@ nav {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   background-color: rgb(46, 155, 223, 0.98);
   color: #fff;
-  padding: 1.5em;
+  padding: 1em;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   position: fixed;

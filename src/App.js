@@ -9,14 +9,14 @@ function App() {
   const name = 'Pirate King Luffy';
 
   return (
-    <body className=''>
+    <div>
       <Navigation />
       <Profile name={name} avatar={profilePic}/>
       <main className='container'>
         <TweetForm name={name} avatar={profilePic} />
         <TweetList />
       </main>
-    </body>
+    </div>
   );
 }
 

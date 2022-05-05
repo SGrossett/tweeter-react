@@ -1,10 +1,10 @@
-import './css/profile.css';
+import './profile.css';
 
 function Profile(props) {
   const { name, avatar } = props;
 
   return (
-    <header>
+    <header className='header'>
       <div className='profile-info'>
         <div className='header-img' avatar={avatar}>
           <img src={avatar} /> 
