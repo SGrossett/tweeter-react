@@ -1,7 +1,9 @@
 import './profile.css';
+import { useState } from 'react';             
 
 function Profile(props) {
   const { name, avatar } = props;
+  
 
   return (
     <header className='header'>
@@ -15,7 +17,7 @@ function Profile(props) {
       </div>
       
       <div className='dark-mode'>
-        <button className='icon btn-toggle'>
+        <button className='icon btn-toggle' on>
           <i className='fas fa-moon'></i>
         </button>
       </div>
