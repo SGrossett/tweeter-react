@@ -1,10 +1,7 @@
 import './tweetList.css';
 import { useState, useEffect } from 'react';
-// const tweets = require('../Tweets/Tweet.js');
-// console.log('tweets:', tweets.tweets);
 
 function TweetList(){
-
   const [tweets, setTweets] = useState(null);
 
   useEffect(() => {
@@ -12,7 +9,7 @@ function TweetList(){
       .then(res => {
         return res.json() })
       .then((data) => {
-        setTweets(data) })
+        setTweets(data.reverse()) })
       .catch((error) => console.log(error));
   }, []);
 
@@ -22,7 +19,7 @@ function TweetList(){
         <article className="tweet" key={tweet.id}>
           <header>
             <div className="profile">
-              <img className="profile-pic" src={tweet.avatar} />
+              <img className="profile-pic" src={tweet.avatar} alt='User profile pic'/>
               <h4>{tweet.name}</h4>
             </div>
             
