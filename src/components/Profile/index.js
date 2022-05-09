@@ -2,7 +2,7 @@ import './profile.css';
 import { useState } from 'react';             
 
 function Profile(props) {
-  const { name, avatar } = props;
+  const { name, avatar, setDarkMode } = props;
   
 
   return (
@@ -17,7 +17,7 @@ function Profile(props) {
       </div>
       
       <div className='dark-mode'>
-        <button className='icon btn-toggle' on>
+        <button className='icon btn-toggle' onClick={() => setDarkMode('false')}>
           <i className='fas fa-moon'></i>
         </button>
       </div>
