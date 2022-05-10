@@ -29,7 +29,7 @@ article > header {
   height: 70px;
   border: none;
   border-radius: 45%;
-  padding: 0.5em;
+  margin-right: 0.5em;
   background: #fff;
   display: flex;
   align-self: center;

@@ -11,7 +11,6 @@ export const lightTheme = {
   articleBS: '0px 6px 10px rgb(0 0 0 / 50%)',
   articleHover: '13px 13px #cfdae2',
   icon: '#fff',
-  profilePic: '0',
   iconToggle: '#000',
   iconBorder: 'none',
   darkModeBorder: 'none',
@@ -29,7 +28,6 @@ export const darkTheme = {
   articleBS: '0px 6px 10px',
   articleHover: '13px 13px 21px rgb(46 155 223)',
   icon: '#000',
-  profilePic: '0.5em',
   iconToggle: 'rgb(239, 239, 239)',
   iconBorder: '1px solid #fff',
   dmBorder: '1px solid #fff',
@@ -65,9 +63,6 @@ export const GlobalStyles = createGlobalStyle `
   }
   .icon.btn-toggle {
     border: ${({ theme }) => theme.iconBorder};
-  }
-  .profile-pic {
-    margin-right: ${({ theme }) => theme.profilePic};
   }
   .btn-toggle > i {
     color: ${({ theme }) => theme.iconToggle};
