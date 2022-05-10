@@ -12,12 +12,13 @@ function TweetForm(props) {
   const [count, setCount] = useState(140);
   const [dateTimeAgo, setDateTimeAgo] = useState(moment().startOf('hour').fromNow());
   const [tweetID, setTweetID] = useState(randomID());
-  
+  const [errorMsg, setErrorMsg] = useState('');
+
   const [data, setData] = useState({
     handle: '@luffy',
     avatar: avatar,
     name: name,
-    body: undefined,
+    body: '',
     age: dateTimeAgo,
     id: tweetID
   })
@@ -28,18 +29,26 @@ function TweetForm(props) {
     setCount(tweetLimit - input.length);
     setData(newData);
   }
+  console.log('count:', count)
+  console.log('empysumb:', errorMsg) 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    fetch('http://localhost:8000/tweets', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    }).then(() => {
-      console.log('New tweet added');
-      setData({ ...data, id: randomID() })
-    })
+    if (!data.body) {
+      setErrorMsg('Tweet must be at least one character long');
+      console.log('ErrorMsg no count:', errorMsg)
+    } else if (data.body.length > 140) {
+      setErrorMsg('Tweet capacity reached');
+    } else {
+      fetch('http://localhost:8000/tweets', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }).then(() => {
+        console.log('New tweet added');
+        setData({ ...data, id: randomID() })
+      })
+    }
   }
   return (
     <section className="new-tweet">
@@ -59,6 +68,11 @@ function TweetForm(props) {
           <span name="counter" className={count < 0 ? 'counter-red' : 'counter'} >{count}</span>
         </div>
       </form>
+      <div class="display-error">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p class="errorMsg">{errorMsg}</p>
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
     </section>
   )
 }
