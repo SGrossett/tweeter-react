@@ -11,7 +11,7 @@ function TweetList(){
       .then((data) => {
         setTweets(data.reverse()) })
       .catch((error) => console.log(error));
-  }, []);
+  }, [tweets]);
 
   return (
     <section className="tweet-container">
@@ -20,7 +20,10 @@ function TweetList(){
           <header>
             <div className="profile">
               <img className="profile-pic" src={tweet.avatar} alt='User profile pic'/>
-              <h4>{tweet.name}</h4>
+              <div>
+                <h4 className="mb-0">{tweet.name}</h4>
+                <h5 className="mt-0">{tweet.handle}</h5>
+              </div>
             </div>
             
             <div className="handle">

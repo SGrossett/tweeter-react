@@ -23,7 +23,10 @@ function TweetForm(props) {
     id: tweetID
   })
 
-  const handleCount = (input) => { 
+  const handleCount = (input) => {
+    if (data.body > 0 &&  data.body <= 140) {
+      setErrorMsg('');
+    }
     const newData = { ...data }
     newData.body = input;
     setCount(tweetLimit - input.length);
@@ -68,11 +71,14 @@ function TweetForm(props) {
           <span name="counter" className={count < 0 ? 'counter-red' : 'counter'} >{count}</span>
         </div>
       </form>
-      <div class="display-error">
-        <i class="fas fa-exclamation-triangle"></i>
-        <p class="errorMsg">{errorMsg}</p>
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
+      {errorMsg && 
+        <div className="display-error">
+          <i className="fas fa-exclamation-triangle"></i>
+          <p className="errorMsg">{errorMsg}</p>
+          <i className="fas fa-exclamation-triangle"></i>
+        </div>
+      }
+      
     </section>
   )
 }
