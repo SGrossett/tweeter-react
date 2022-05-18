@@ -1,14 +1,10 @@
 import './tweetList.css';
-import { useState, useEffect, Fragment } from 'react';
-import { BsTrash } from 'react-icons/bs';
-import classLister from 'css-module-class-lister';
-
+import { useState, useEffect } from 'react';
 import DropdownMenu, { DropdownItem, DropdownItemGroup } from '@atlaskit/dropdown-menu';
 
 function TweetList(){
-  const [tweets, setTweets] = useState(null);  
-  // const classes = classLister(styles);
-
+  const [tweets, setTweets] = useState(null); 
+  
   useEffect(() => {
     fetch('http://localhost:8000/tweets')
       .then(res => {
@@ -16,7 +12,7 @@ function TweetList(){
       .then((data) => {
         setTweets(data.reverse()) })
       .catch((error) => console.log(error));
-  }, []);
+  }, [tweets]);
 
   return (
     <section className='tweet-container'>
@@ -32,11 +28,19 @@ function TweetList(){
             </div>
             
             <div className='handle'>
-            <DropdownMenu trigger="..." placement="bottom-end" className='text-black'>
-              <DropdownItemGroup>
-                <DropdownItem>Delete</DropdownItem>
-              </DropdownItemGroup>
-            </DropdownMenu>
+              {tweet.id === 0 || tweet.id === 1 ?   
+                <DropdownMenu trigger='...' placement='bottom-end' className='text-black'>
+                  <DropdownItemGroup>
+                    <DropdownItem>Block User</DropdownItem>
+                  </DropdownItemGroup>
+                </DropdownMenu> : 
+
+                <DropdownMenu trigger='...' placement='bottom-end' className='text-black'>
+                  <DropdownItemGroup>
+                    <DropdownItem>Delete</DropdownItem>
+                  </DropdownItemGroup>
+                </DropdownMenu>
+              }
             </div>
           </header>
           <div>
@@ -58,30 +62,3 @@ function TweetList(){
 }
 
 export default TweetList;
-
-const myOptions = [
-  {
-    name: 'Delete button',
-    href: '##',
-    icon: <BsTrash />
-  },
-  
-];
-
-const solutions = [
-  {
-    name: 'Insights',
-    description: 'Measure actions your users take',
-    href: '##',
-  },
-  {
-    name: 'Automations',
-    description: 'Create your own targeted content',
-    href: '##',
-  },
-  {
-    name: 'Reports',
-    description: 'Keep track of your growth',
-    href: '##',
-  },
-]
