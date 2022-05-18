@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const lightTheme = {
   body: '#fff',
@@ -10,7 +10,7 @@ export const lightTheme = {
   articleBdr: '3px solid #000',
   articleBS: '0px 6px 10px rgb(0 0 0 / 50%)',
   articleHover: '13px 13px #cfdae2',
-  icon: '#fff',
+  iconBg: '#f7f7f7',
   iconToggle: '#000',
   iconBorder: 'none',
   darkModeBorder: 'none',
@@ -30,7 +30,7 @@ export const darkTheme = {
   articleBdr: '3px solid #657786',
   articleBS: '0px 6px 10px',
   articleHover: '13px 13px 21px rgb(46 155 223)',
-  icon: '#000',
+  iconBg: '#000',
   iconToggle: 'rgb(239, 239, 239)',
   iconBorder: '1px solid #fff',
   dmBorder: '1px solid #fff',
@@ -63,7 +63,7 @@ export const GlobalStyles = createGlobalStyle `
     box-shadow: ${({ theme }) => theme.articleHover};
   }
   .icon {
-    background-color: ${({ theme }) => theme.icon};
+    background-color: ${({ theme }) => theme.iconBg};
     padding: 0.5em;
   }
   .icon.btn-toggle {
