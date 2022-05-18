@@ -32,14 +32,11 @@ function TweetForm(props) {
     setCount(tweetLimit - input.length);
     setData(newData);
   }
-  console.log('count:', count)
-  console.log('empysumb:', errorMsg) 
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!data.body) {
       setErrorMsg('Tweet must be at least one character long');
-      console.log('ErrorMsg no count:', errorMsg)
     } else if (data.body.length > 140) {
       setErrorMsg('Tweet capacity reached');
     } else {
