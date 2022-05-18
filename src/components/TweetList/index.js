@@ -1,8 +1,16 @@
-import './tweetList.css';
-import { useState, useEffect } from 'react';
+import styles from './tweetList.module.css';
+import { useState, useEffect, Fragment } from 'react';
+import { BsTrash } from 'react-icons/bs';
+import classLister from 'css-module-class-lister';
+
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 function TweetList(){
-  const [tweets, setTweets] = useState(null);
+  const [tweets, setTweets] = useState(null);  
+  const classes = classLister(styles);
 
   useEffect(() => {
     fetch('http://localhost:8000/tweets')
@@ -11,23 +19,29 @@ function TweetList(){
       .then((data) => {
         setTweets(data.reverse()) })
       .catch((error) => console.log(error));
-  }, [tweets]);
+  }, []);
 
   return (
-    <section className="tweet-container">
+    <section className={classes('tweet-container')}>
       {tweets && tweets.map((tweet) => (
-        <article className="tweet" key={tweet.id}>
+        <article className={classes('tweet')} key={tweet.id}>
           <header>
-            <div className="profile">
-              <img className="profile-pic" src={tweet.avatar} alt='User profile pic'/>
+            <div className={classes('profile')}>
+              <img className={classes('profile-pic')} src={tweet.avatar} alt='User profile pic'/>
               <div>
-                <h4 className="mb-0">{tweet.name}</h4>
-                <h5 className="mt-0">{tweet.handle}</h5>
+                <h4 className={classes('mb-0')}>{tweet.name}</h4>
+                <h5 className={classes('mt-0')}>{tweet.handle}</h5>
               </div>
             </div>
             
-            <div className="handle">
-              <h5>{tweet.handle}</h5>
+            <div className={classes('handle')}>
+            <DropdownButton align="end" title="Dropdown end" id="dropdown-menu-align-end">
+              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+              <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
+            </DropdownButton>
             </div>
           </header>
           <div>
@@ -37,9 +51,9 @@ function TweetList(){
           <footer>
             <div><b>{tweet.age}</b></div>
             <div>
-              <button className="icon flag"><i className="fas fa-flag"></i></button>
-              <button className="icon retweet"><i className="fas fa-retweet"></i></button>
-              <button className="icon heart"><i className="fas fa-heart"></i></button>
+              <button className={classes('icon flag')}><i className={classes('fas fa-flag')}></i></button>
+              <button className={classes('icon retweet')}><i className={classes('fas fa-retweet')}></i></button>
+              <button className={classes('icon heart')}><i className={classes('fas fa-heart')}></i></button>
             </div>
           </footer>
         </article>
@@ -49,3 +63,30 @@ function TweetList(){
 }
 
 export default TweetList;
+
+const myOptions = [
+  {
+    name: 'Delete button',
+    href: '##',
+    icon: <BsTrash />
+  },
+  
+];
+
+const solutions = [
+  {
+    name: 'Insights',
+    description: 'Measure actions your users take',
+    href: '##',
+  },
+  {
+    name: 'Automations',
+    description: 'Create your own targeted content',
+    href: '##',
+  },
+  {
+    name: 'Reports',
+    description: 'Keep track of your growth',
+    href: '##',
+  },
+]
