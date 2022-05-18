@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@atlaskit/dropdown-menu": "^11.1.5",
     "@expo/vector-icons": "^13.0.0",
     "@headlessui/react": "^1.6.1",
     "@popperjs/core": "^2.11.5",

@@ -1,16 +1,13 @@
-import styles from './tweetList.module.css';
+import './tweetList.css';
 import { useState, useEffect, Fragment } from 'react';
 import { BsTrash } from 'react-icons/bs';
 import classLister from 'css-module-class-lister';
 
-import { Dropdown, DropdownButton } from 'react-bootstrap';
-
-import 'bootstrap/dist/css/bootstrap.css';
-
+import DropdownMenu, { DropdownItem, DropdownItemGroup } from '@atlaskit/dropdown-menu';
 
 function TweetList(){
   const [tweets, setTweets] = useState(null);  
-  const classes = classLister(styles);
+  // const classes = classLister(styles);
 
   useEffect(() => {
     fetch('http://localhost:8000/tweets')
@@ -22,26 +19,24 @@ function TweetList(){
   }, []);
 
   return (
-    <section className={classes('tweet-container')}>
+    <section className='tweet-container'>
       {tweets && tweets.map((tweet) => (
-        <article className={classes('tweet')} key={tweet.id}>
+        <article className='tweet' key={tweet.id}>
           <header>
-            <div className={classes('profile')}>
-              <img className={classes('profile-pic')} src={tweet.avatar} alt='User profile pic'/>
+            <div className='profile'>
+              <img className='profile-pic' src={tweet.avatar} alt='User profile pic'/>
               <div>
-                <h4 className={classes('mb-0')}>{tweet.name}</h4>
-                <h5 className={classes('mt-0')}>{tweet.handle}</h5>
+                <h4 className='mb-0'>{tweet.name}</h4>
+                <h5 className='mt-0'>{tweet.handle}</h5>
               </div>
             </div>
             
-            <div className={classes('handle')}>
-            <DropdownButton align="end" title="Dropdown end" id="dropdown-menu-align-end">
-              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-              <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
-            </DropdownButton>
+            <div className='handle'>
+            <DropdownMenu trigger="..." placement="bottom-end" className='text-black'>
+              <DropdownItemGroup>
+                <DropdownItem>Delete</DropdownItem>
+              </DropdownItemGroup>
+            </DropdownMenu>
             </div>
           </header>
           <div>
@@ -51,9 +46,9 @@ function TweetList(){
           <footer>
             <div><b>{tweet.age}</b></div>
             <div>
-              <button className={classes('icon flag')}><i className={classes('fas fa-flag')}></i></button>
-              <button className={classes('icon retweet')}><i className={classes('fas fa-retweet')}></i></button>
-              <button className={classes('icon heart')}><i className={classes('fas fa-heart')}></i></button>
+              <button className='icon flag'><i className='fas fa-flag'></i></button>
+              <button className='icon retweet'><i className='fas fa-retweet'></i></button>
+              <button className='icon heart'><i className='fas fa-heart'></i></button>
             </div>
           </footer>
         </article>
