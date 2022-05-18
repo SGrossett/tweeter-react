@@ -45,7 +45,7 @@ function TweetForm(props) {
     } else {
       fetch('http://localhost:8000/tweets', {
         method: 'POST',
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       }).then(() => {
         console.log('New tweet added');
@@ -54,28 +54,28 @@ function TweetForm(props) {
     }
   }
   return (
-    <section className="new-tweet">
+    <section className='new-tweet'>
       <h2>Compose Tweet</h2>
       <form onSubmit={handleSubmit}>
         <label>What are you humming about?</label>
         <textarea 
           rows={2} 
-          type="text"
+          type='text'
           name='body'
-          className="tweet-text"
+          className='tweet-text'
           value={data.body}
           onChange={(event) => handleCount(event.target.value)}>  
         </textarea>
         <div>
-          <button type="submit">Tweet</button>
-          <span name="counter" className={count < 0 ? 'counter-red' : 'counter'} >{count}</span>
+          <button type='submit'>Tweet</button>
+          <span name='counter' className={count < 0 ? 'counter-red' : 'counter'} >{count}</span>
         </div>
       </form>
       {errorMsg && 
-        <div className="display-error">
-          <i className="fas fa-exclamation-triangle"></i>
-          <p className="errorMsg">{errorMsg}</p>
-          <i className="fas fa-exclamation-triangle"></i>
+        <div className='display-error'>
+          <i className='fas fa-exclamation-triangle'></i>
+          <p className='errorMsg'>{errorMsg}</p>
+          <i className='fas fa-exclamation-triangle'></i>
         </div>
       }
       
