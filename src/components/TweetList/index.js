@@ -5,6 +5,18 @@ import DropdownMenu, { DropdownItem, DropdownItemGroup } from '@atlaskit/dropdow
 function TweetList(){
   const [tweets, setTweets] = useState(null); 
   
+  const handleAlert = (id, name) => {
+    console.log(`The following ID was clicked ${id}`);
+    alert(`${name} was blocked`);
+  }
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:8000/tweets/${id}`, {
+      method: 'DELETE'
+    }).then(res => { console.log('TWEET DELETED') })
+      .catch(error => { console.log(error) });
+  }
+
   useEffect(() => {
     fetch('http://localhost:8000/tweets')
       .then(res => {
@@ -31,13 +43,13 @@ function TweetList(){
               {tweet.id === 0 || tweet.id === 1 ?   
                 <DropdownMenu trigger='...' placement='bottom-end' className='text-black'>
                   <DropdownItemGroup>
-                    <DropdownItem>Block User</DropdownItem>
+                    <DropdownItem onClick={() => handleAlert(tweet.id, tweet.name)}>Block User</DropdownItem>
                   </DropdownItemGroup>
                 </DropdownMenu> : 
 
                 <DropdownMenu trigger='...' placement='bottom-end' className='text-black'>
                   <DropdownItemGroup>
-                    <DropdownItem>Delete</DropdownItem>
+                    <DropdownItem onClick={() => handleDelete(tweet.id)}>Delete</DropdownItem>
                   </DropdownItemGroup>
                 </DropdownMenu>
               }
