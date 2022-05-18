@@ -9,8 +9,8 @@ function TweetForm(props) {
   }
   const tweetLimit = 140;
   let now = moment().startOf('hour').fromNow();
-  const [count, setCount] = useState(140);
-  const [dateTimeAgo, setDateTimeAgo] = useState(now);
+  const [count, setCount] = useState(140); // eslint-disable-next-line
+  const [dateTimeAgo, setDateTimeAgo] = useState(now); // eslint-disable-next-line
   const [tweetID, setTweetID] = useState(randomID());
   const [errorMsg, setErrorMsg] = useState('');
 
