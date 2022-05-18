@@ -1,10 +1,8 @@
 import './profile.css';
-import { useState } from 'react';             
 
 function Profile(props) {
   const { name, avatar, setDarkMode } = props;
   
-
   return (
     <header className='header'>
       <div className='profile-info'>

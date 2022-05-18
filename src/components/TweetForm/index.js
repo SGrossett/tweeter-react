@@ -2,15 +2,15 @@ import './tweetForm.css';
 import moment from 'moment';
 import { useState } from 'react';
 
-
 function TweetForm(props) {
   const { avatar, name } = props;
   const randomID = () => { 
    return (Math.random() + 1).toString(36).substring(7);
   }
   const tweetLimit = 140;
+  let now = moment().startOf('hour').fromNow();
   const [count, setCount] = useState(140);
-  const [dateTimeAgo, setDateTimeAgo] = useState(moment().startOf('hour').fromNow());
+  const [dateTimeAgo, setDateTimeAgo] = useState(now);
   const [tweetID, setTweetID] = useState(randomID());
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -46,6 +46,7 @@ function TweetForm(props) {
         body: JSON.stringify(data)
       }).then(() => {
         console.log('New tweet added');
+        data.body = '';
         setData({ ...data, id: randomID() })
       })
     }
