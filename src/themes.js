@@ -14,7 +14,10 @@ export const lightTheme = {
   iconToggle: '#000',
   iconBorder: 'none',
   darkModeBorder: 'none',
-  dmRadius: '50%'
+  dmRadius: '50%',
+  dots: '#000',
+  option: '#f00',
+  optionExtra: 'transparent'
 }
 
 export const darkTheme = {
@@ -31,14 +34,16 @@ export const darkTheme = {
   iconToggle: 'rgb(239, 239, 239)',
   iconBorder: '1px solid #fff',
   dmBorder: '1px solid #fff',
-  dmRadius: '50%'
+  dmRadius: '50%',
+  dots: '#fff !important',
+  option: '#113a54 !important',
+  optionExtra: '#113a54'
 }
 
 export const GlobalStyles = createGlobalStyle `
   body {
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-
   }
   nav {
     background-image: ${({ theme }) => theme.navImage};
@@ -70,5 +75,14 @@ export const GlobalStyles = createGlobalStyle `
   .darkMode {
     border: ${({ theme }) => theme.dmBorder};
     border: ${({ theme }) => theme.dmRadius};
+  }
+  .css-f6nuwn {
+    background-color: ${({ theme }) => theme.option}
+  }
+  .css-1hqmh00::before, .css-1hqmh00::after {
+    background-color: ${({ theme }) => theme.optionExtra}
+  }
+  .css-7no60z-ButtonBase {
+    color: ${({ theme }) => theme.dots}
   }
 `

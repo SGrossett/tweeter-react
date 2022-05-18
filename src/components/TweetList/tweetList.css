@@ -111,12 +111,11 @@ article:hover {
   color: black !important;
 }
 
-.css-iuba1a-ButtonBase:hover {
+.css-iuba1a-ButtonBase {
   background-color: transparent !important;
 }
-
-.css-7no60z-ButtonBase {
-  color: black !important;
+.css-iuba1a-ButtonBase:hover {
+  background-color: transparent !important;
 }
 
 .css-f6nuwn {
