@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './themes';
 import Navigation from './components/Navigation/index';
@@ -12,12 +12,16 @@ const StyledApp = styled.div``;
 
 function App() {
   const name = 'Pirate King Luffy';
-  const [theme, setTheme] = useState('light');
+  const storedDarkMode = localStorage.getItem('light');
+  const [theme, setTheme] = useState(storedDarkMode);
 
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
     console.log('theme:', theme)
   }
+  useEffect(() => {
+    localStorage.setItem('light', theme);
+  }, [theme])
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme } >
